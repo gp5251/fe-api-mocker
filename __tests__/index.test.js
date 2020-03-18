@@ -9,7 +9,7 @@ describe('mocker', () => {
 		const d = await fetch(baseURL + '/api/1');
 		expect(d.headers.get('X-Foo')).toBe('bar');
 		const data = await d.json();
-		expect(data).toEqual({msg: 'api res'});
+		expect(data).toEqual({msg: 'response data'});
 	});
 
 	it('should work with function data', async () => {
@@ -35,7 +35,7 @@ describe('mocker', () => {
 		const d = await fetch(baseURL + '/api/1', {method: 'POST'});
 		expect(d.headers.get('X-Foo')).toBe('bar');
 		const data = await d.json();
-		expect(data).toEqual({msg: 'api res'});
+		expect(data).toEqual({msg: 'response data'});
 	});
 
 	it('should work with function data in POST request', async () => {

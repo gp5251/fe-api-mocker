@@ -1,6 +1,6 @@
 {
   "name": "fe-api-mocker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A api mocker for fe development, can also be used as a webpack plugin.",
   "main": "index.js",
   "scripts": {
