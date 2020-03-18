@@ -26,31 +26,31 @@ $ npm i fe-api-mocker -D
 module.exports = {
 	// 请求的方法和api地址。
 	// 默认为 GET 请求。
-  "api/1": {
+	"api/1": {
 		status: 200,
 		// 自定义header
-    headers: {
-      'X-Foo': 'bar'
+		headers: {
+			'X-Foo': 'bar'
 		},
 		// 请求延时，默认100ms
 		delay: 1000,
 		// 返回数据
-    data: {
-      msg: 'response data'
-    }
+		data: {
+			msg: 'response data'
+		}
 	},
 
 	// 以函数定义返回数据
-  "api/2": {
-    data (req){
-      return {
-				role: req.query.username === 'paul' ? 'admin' : 'not admin'
+	"api/2": {
+		data(req) {
+			return {
+				role: req.query.username === 'paul' ? 'admin': 'not admin'
 			}
-    }
+		}
 	},
 
 	// 内置mockjs
-  "api/3": {
+	"api/3": {
 		data: {
 			// 定义长度为5～10的list数组
 			'list|5-10': [{
@@ -59,25 +59,24 @@ module.exports = {
 			}]
 		}
 	},
-	
+
 	// 发送POST请求
-  "post api/1": {
-    data: {
-      msg: 'response data'
-    }
+	"post api/1": {
+		data: {
+			msg: 'response data'
+		}
 	},
 
 	// 以函数定义返回数据
-  "post api/2": {
-    data (req){
-      return {
-				role: req.body.username === 'paul' ? 'admin' : 'not admin',
+	"post api/2": {
+		data(req) {
+			return {
+				role: req.body.username === 'paul' ? 'admin': 'not admin',
 				name: req.body.username
 			}
-    }
+		}
 	},
 }
-
 ```
 
 2. 服务器配置
