@@ -32,7 +32,7 @@ function fn(app, filePath, {
 					reData = data(req);
 				}
 
-				res.json(Mock.mock(reData))
+				res.send(Mock.mock(reData))
 			}, delay)
 		})
 	});
