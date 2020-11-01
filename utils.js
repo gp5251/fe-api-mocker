@@ -1,9 +1,10 @@
 module.exports = {
-	readData(url){
+	readData(url) {
 		let re = {};
-		try{
+		try {
 			re = require(url);
-		}catch(e) {
+			delete require.cache[require.resolve(url)];
+		} catch (e) {
 			console.error(e);
 		}
 		return re;
